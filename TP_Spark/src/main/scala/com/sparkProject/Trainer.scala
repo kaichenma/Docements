@@ -210,11 +210,11 @@ object Trainer {
 
 
 
-    /** Save the valided model and the forecasted resulat **/
+    /** Save the valided model and the forecasted result **/
 
-    model_valided.save("/Users/kaichenma/Documents/copies/TP_Spark/model_pre")
+    model_valided.write.overwrite.save("/Users/kaichenma/Documents/copies/TP_Spark/model_pred")
 
-    df_WithPredictions.write.mode(SaveMode.Overwrite).parquet("/Users/kaichenma/Documents/copies/TP_Spark/result_pre")
+    df_WithPredictions.write.mode(SaveMode.Overwrite).parquet("/Users/kaichenma/Documents/copies/TP_Spark/result_pred")
 
 
 
