@@ -199,7 +199,7 @@ object Trainer {
 
     val accuracy = evaluator.evaluate(df_WithPredictions)
 
-    model_valided.save("/Users/kaichenma/Documents/copies/TP_Spark/model_pre")
+
 
 
     /** Display the result **/
@@ -208,6 +208,11 @@ object Trainer {
 
     df_WithPredictions.groupBy( "final_status", "predictions").count.show()
 
+
+
+    /** Save the valided model and the forecasted resulat **/
+
+    model_valided.save("/Users/kaichenma/Documents/copies/TP_Spark/model_pre")
 
     df_WithPredictions.write.mode(SaveMode.Overwrite).parquet("/Users/kaichenma/Documents/copies/TP_Spark/result_pre")
 
